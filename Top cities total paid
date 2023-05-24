@@ -1,0 +1,30 @@
+"SELECT count(customer.customer_id) as Count_customers,
+  country.country,
+  city.city
+FROM customer
+inner JOIn address ON customer.address_id = address.address_id
+inner JOIn city ON address.city_id = city.city_id
+inner JOIn country ON city.country_id = country.country_id
+where country.country in ('United States','India','Brazil','China','Japan','Mexico','Russian Federation','Philippines','Turkey','Indoneseia')
+group by city.city, country.country
+order by count(customer.customer_id) desc
+limit 10
+"					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
