@@ -1,0 +1,36 @@
+"SELECT CUSTOMER.CUSTOMER_ID, customer.first_name,
+  customer.last_name,
+  country.country,
+  city.city,
+  SUM(payment.amount) AS Total_amount
+FROM customer
+INNER JOIN payment ON customer.customer_id = payment.customer_id
+INNER JOIN address ON customer.address_id = address.address_id
+INNER JOIN city ON address.city_id = city.city_id
+INNER JOIN country ON city.country_id = country.country_id
+WHERE city.city in ('Aurora', 'Acua','Citrus Heights', 'Iwaki','Ambattur','Shanwei', 'So Leopoldo',
+'Teboksary','Tianjin','Cianjur')
+GROUP BY CUSTOMER.CUSTOMER_ID, city.city, country.country,customer.first_name,customer.last_name
+ORDER BY Total_amount DESC
+LIMIT 5
+"					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
