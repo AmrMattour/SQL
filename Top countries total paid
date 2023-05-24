@@ -1,0 +1,31 @@
+"select country.country, (SELECT distinct count(customer.customer_id) as number_of_customers),
+sum(payment. amount) as Total_Amount_Paid 
+FROM payment 
+inner JoIn customer ON payment.customer_id = customer.customer_id  
+inner JoIn address ON customer.address_id = address.address_id  
+inner JoIn city ON address.city_id = city.city_id 
+inner JOIn country ON city.country_id=country.country_id 
+group by country.country 
+order by Total_Amount_Paid desc 
+Limit 10
+"					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
